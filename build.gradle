@@ -38,6 +38,10 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+
+
+
     // queryDSL 설정 -> 검색 기능 넣어주기 위해서
     implementation "com.querydsl:querydsl-jpa"
     implementation "com.querydsl:querydsl-core"
