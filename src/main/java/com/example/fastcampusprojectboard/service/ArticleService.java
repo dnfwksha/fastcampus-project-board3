@@ -2,6 +2,7 @@ package com.example.fastcampusprojectboard.service;
 
 import com.example.fastcampusprojectboard.domain.type.SearchType;
 import com.example.fastcampusprojectboard.dto.ArticleDto;
+import com.example.fastcampusprojectboard.dto.ArticleUpdateDto;
 import com.example.fastcampusprojectboard.repository.ArticleRepository;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
@@ -29,5 +30,11 @@ public class ArticleService {
     }
 
     public void saveArticle(ArticleDto dto) {
+    }
+
+    public void updateArticle(long articleId, ArticleUpdateDto dto) {
+    }
+
+    public void deleteArticle(long articleId) {
     }
 }
