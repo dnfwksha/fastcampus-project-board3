@@ -36,14 +36,15 @@ class ArticleCommentServiceTest {
     void test1() {
         Long articleId = 1L;
 
-        given(articleRepository.findById(articleId)).willReturn(
-                Optional.of(Article.of("title", "content", "hashtag"))
-        );
+        ArticleComment expected = createArticleComment("content");
+        given(articleCommentRepository.findByArticle_Id(articleId)).willReturn(List.of(expected));
 
-        List<ArticleCommentDto> articleComments = sut.searchArticleComment();
+        List<ArticleCommentDto> actual = sut.searchArticleComments(articleId);
 
-        assertThat(articleComments).isNotNull();
-        then(articleRepository).should().findById(articleId);
+        assertThat(actual)
+                .hasSize(1)
+                .first().hasFieldOrPropertyWithValue("content",expected.getContent());
+        then(articleCommentRepository).should().findByArticle_id(articleId);
     }
 
     @DisplayName("댓글 정보를 입력하면, 댓글을 저장한다.")

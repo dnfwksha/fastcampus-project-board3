@@ -1,1 +1,6 @@
 https://github.com/djkeh/fastcampus-project-board/tree/main
+
+
+insert into user_account
+(user_id, user_password, nickname, email, memo, created_at, created_by, modified_at, modified_by) values
+('dnfwk','jun1010!','Dnfwk','dnfwksha@gmail.com','I am dnfwk.',now(),'dnfwk',now(),'dnfwk');
